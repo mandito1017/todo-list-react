@@ -1,0 +1,37 @@
+.form-card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.form-title {
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.form-input {
+  border-radius: 10px;
+  border: 1.5px solid #e2e8f0;
+  padding: 0.65rem 1rem;
+  font-size: 0.95rem;
+}
+
+.form-input:focus {
+  border-color: #4e73df;
+  box-shadow: 0 0 0 3px rgba(78,115,223,0.15);
+}
+
+.btn-add {
+  background-color: #4e73df;
+  border: none;
+  border-radius: 10px;
+  padding: 0.65rem;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+
+.btn-add:hover {
+  background-color: #224abe;
+}

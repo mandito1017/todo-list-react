@@ -1,8 +1,12 @@
-.goals-page {
+.item-page {
   padding: 2rem 0;
 }
 
-.goal-form {
+.form-col {
+  padding-right: 2rem;
+}
+
+.item-form {
   background: #ffffff;
   border-radius: 16px;
   padding: 2rem;
@@ -28,7 +32,7 @@
   box-shadow: 0 0 0 3px rgba(129,230,217,0.3);
 }
 
-.btn-add-goal {
+.btn-add-item {
   background-color: #81e6d9;
   border: none;
   border-radius: 10px;
@@ -39,12 +43,12 @@
   transition: background 0.2s;
 }
 
-.btn-add-goal:hover {
+.btn-add-item:hover {
   background-color: #4fd1c5;
   color: #2d3748;
 }
 
-.btn-add-mobile-goal {
+.btn-add-mobile {
   background-color: #81e6d9;
   border: none;
   border-radius: 10px;
@@ -53,7 +57,17 @@
   padding: 0.6rem 1.5rem;
 }
 
-.btn-add-mobile-goal:hover {
+.btn-add-mobile:hover {
   background-color: #4fd1c5;
   color: #2d3748;
+}
+
+.cards-col {
+  padding-left: 1rem;
+}
+
+.cards-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }

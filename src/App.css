@@ -5,17 +5,20 @@
 }
 
 body {
-  background-color: #f0f4f8;
+  background-color: #f8f9fa;
   font-family: 'Segoe UI', sans-serif;
 }
 
 .app-wrapper {
   min-height: 100vh;
-  background-color: #f0f4f8;
 }
 
-.main-container {
-  padding-top: 2rem;
-  padding-bottom: 3rem;
-  max-width: 700px;
+.page-content {
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .page-content {
+    padding: 1rem;
+  }
 }

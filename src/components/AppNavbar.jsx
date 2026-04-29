@@ -1,4 +1,4 @@
-import './AppNavbar.css';
+import './AppNavbar.scss';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
 function AppNavbar({ activePage, setActivePage }) {

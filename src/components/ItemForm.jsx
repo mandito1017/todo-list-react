@@ -1,4 +1,4 @@
-import './ItemPage.css';
+import './ItemPage.scss';
 import { Form, Button } from 'react-bootstrap';
 
 function ItemForm({ name, setName, description, setDescription, dueDate, setDueDate, onAdd, buttonText }) {

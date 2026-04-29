@@ -1,4 +1,4 @@
-import './ItemPage.css';
+import './ItemPage.scss';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';

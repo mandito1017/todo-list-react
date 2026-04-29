@@ -1,0 +1,57 @@
+// Variables
+$card-bg: #80edd6;
+$card-text: #2d3748;
+$card-subtext: #4a5568;
+$btn-bg: #9f7aea;
+$btn-hover: #805ad5;
+
+.task-card {
+  background-color: $card-bg;
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: transform 0.15s;
+  text-align: center;
+  margin-bottom: 1rem;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+
+  .card-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: $card-text;
+    margin-bottom: 0.5rem;
+  }
+
+  .card-description-label,
+  .card-due-label {
+    font-size: 0.95rem;
+    color: $card-text;
+    margin-bottom: 0.2rem;
+  }
+
+  .card-description,
+  .card-due-date {
+    font-size: 0.9rem;
+    color: $card-subtext;
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-remove {
+    background-color: $btn-bg;
+    border: none;
+    border-radius: 20px;
+    padding: 0.4rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $btn-hover;
+    }
+  }
+}

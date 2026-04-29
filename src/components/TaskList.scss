@@ -1,0 +1,58 @@
+// Variables
+$badge-total-bg: #e2e8f0;
+$badge-total-color: #4a5568;
+$badge-pending-bg: #fef3cd;
+$badge-pending-color: #856404;
+$badge-done-bg: #d1fae5;
+$badge-done-color: #065f46;
+$label-color: #718096;
+$done-label-color: #48bb78;
+$empty-color: #a0aec0;
+
+.list-stats {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+
+  .stat-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    &.total {
+      background: $badge-total-bg;
+      color: $badge-total-color;
+    }
+
+    &.pending {
+      background: $badge-pending-bg;
+      color: $badge-pending-color;
+    }
+
+    &.done-badge {
+      background: $badge-done-bg;
+      color: $badge-done-color;
+    }
+  }
+}
+
+.section-label {
+  font-weight: 600;
+  color: $label-color;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  margin: 1rem 0 0.5rem;
+
+  &.done-label {
+    color: $done-label-color;
+  }
+}
+
+.empty-msg {
+  text-align: center;
+  color: $empty-color;
+  margin-top: 2rem;
+  font-size: 1rem;
+}

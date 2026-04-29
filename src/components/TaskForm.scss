@@ -1,0 +1,46 @@
+// Variables
+$card-border-radius: 16px;
+$input-border: #e2e8f0;
+$input-focus: #4e73df;
+$btn-bg: #4e73df;
+$btn-hover: #224abe;
+$title-color: #2d3748;
+$label-color: #4a5568;
+
+.form-card {
+  border: none;
+  border-radius: $card-border-radius;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  .form-title {
+    font-weight: 600;
+    color: $title-color;
+    margin-bottom: 1rem;
+  }
+
+  .form-input {
+    border-radius: 10px;
+    border: 1.5px solid $input-border;
+    padding: 0.65rem 1rem;
+    font-size: 0.95rem;
+
+    &:focus {
+      border-color: $input-focus;
+      box-shadow: 0 0 0 3px rgba(78, 115, 223, 0.15);
+    }
+  }
+
+  .btn-add {
+    background-color: $btn-bg;
+    border: none;
+    border-radius: 10px;
+    padding: 0.65rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.2s;
+
+    &:hover {
+      background-color: $btn-hover;
+    }
+  }
+}

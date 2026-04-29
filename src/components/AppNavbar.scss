@@ -1,0 +1,38 @@
+// Variables
+$navbar-bg: #ffffff;
+$navbar-border: #b2f0e0;
+$brand-color: #2d3748;
+$link-color: #4a5568;
+$active-bg: #81e6d9;
+$hover-bg: #e6fffa;
+
+.app-navbar {
+  background-color: $navbar-bg;
+  border-bottom: 2px solid $navbar-border;
+  padding: 0.8rem 0;
+
+  .navbar-brand-custom {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: $brand-color !important;
+  }
+
+  .nav-link-custom {
+    font-weight: 600;
+    color: $link-color !important;
+    margin-left: 1rem;
+    padding: 0.5rem 1rem !important;
+    border-radius: 8px;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: $hover-bg;
+      color: $brand-color !important;
+    }
+
+    &.active {
+      background-color: $active-bg;
+      color: $brand-color !important;
+    }
+  }
+}

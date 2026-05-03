@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import './App.scss';
 import { useState } from 'react';
 import AppNavbar from './components/AppNavbar';
 import ItemPage from './components/ItemPage';

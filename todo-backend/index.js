@@ -3,9 +3,13 @@ const cors = require('cors');
 const authMiddleware = require('./middleware');
 const tasksRouter = require('./routes/tasks');
 const goalsRouter = require('./routes/goals');
+const connectDB = require('./db');
 
 const app = express();
 const PORT = 3001;
+
+// Conectar a MongoDB
+connectDB();
 
 app.use(cors());
 app.use(express.json());

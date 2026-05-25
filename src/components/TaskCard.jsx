@@ -10,7 +10,7 @@ function TaskCard({ task, onRemove }) {
         <Card.Text className="card-description">{task.description}</Card.Text>
         <Badge bg="warning" text="dark" className="mb-2">Fecha de Vencimiento</Badge>
         <Card.Text className="card-due-date">{task.dueDate}</Card.Text>
-        <Button className="btn-remove" onClick={() => onRemove(task.id)}>
+        <Button className="btn-remove" onClick={() => onRemove(task._id)}>
           Eliminar
         </Button>
       </Card.Body>

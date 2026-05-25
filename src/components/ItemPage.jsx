@@ -1,28 +1,36 @@
 import './ItemPage.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Row, Col, Button, Modal } from 'react-bootstrap';
 import TaskCard from './TaskCard';
 import ItemForm from './ItemForm';
+import { fetchTasks, addTask, removeTask } from '../store/tasksSlice';
+import { fetchGoals, addGoal, removeGoal } from '../store/goalsSlice';
 
 function ItemPage({ type }) {
   const dispatch = useDispatch();
   const items = useSelector((state) => state[type].items);
-  const actions = type === 'tasks'
-    ? require('../store/tasksSlice')
-    : require('../store/goalsSlice');
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [dueDate, setDueDate] = useState('');
   const [showModal, setShowModal] = useState(false);
 
+  useEffect(() => {
+    if (type === 'tasks') {
+      dispatch(fetchTasks());
+    } else {
+      dispatch(fetchGoals());
+    }
+  }, [type, dispatch]);
+
   const handleAdd = () => {
     if (!name.trim()) return;
-    dispatch(actions.addTask
-      ? actions.addTask({ id: Date.now(), name, description, dueDate })
-      : actions.addGoal({ id: Date.now(), name, description, dueDate })
-    );
+    if (type === 'tasks') {
+      dispatch(addTask({ name, description, dueDate }));
+    } else {
+      dispatch(addGoal({ name, description, dueDate }));
+    }
     setName('');
     setDescription('');
     setDueDate('');
@@ -30,10 +38,11 @@ function ItemPage({ type }) {
   };
 
   const handleRemove = (id) => {
-    dispatch(actions.removeTask
-      ? actions.removeTask(id)
-      : actions.removeGoal(id)
-    );
+    if (type === 'tasks') {
+      dispatch(removeTask(id));
+    } else {
+      dispatch(removeGoal(id));
+    }
   };
 
   const buttonText = type === 'tasks' ? 'ADD TASK' : 'ADD GOAL';
@@ -61,7 +70,7 @@ function ItemPage({ type }) {
 
           <div className="cards-list">
             {items && items.map(item => (
-              <TaskCard key={item.id} task={item} onRemove={handleRemove} />
+              <TaskCard key={item._id} task={item} onRemove={handleRemove} />
             ))}
           </div>
         </Col>

@@ -1,22 +1,41 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import api from '../api';
+
+// Async actions
+export const fetchGoals = createAsyncThunk('goals/fetchGoals', async () => {
+  const response = await api.get('/getGoals');
+  return response.data;
+});
+
+export const addGoal = createAsyncThunk('goals/addGoal', async (goal) => {
+  const response = await api.post('/addGoal', goal);
+  return response.data;
+});
+
+export const removeGoal = createAsyncThunk('goals/removeGoal', async (id) => {
+  await api.delete(`/removeGoal/${id}`);
+  return id;
+});
 
 const goalsSlice = createSlice({
   name: 'goals',
   initialState: {
-    items: [
-      { id: 1, name: 'Aprender React', description: 'Completar el curso de React', dueDate: '31/12/2024' },
-      { id: 2, name: 'Leer 12 libros', description: 'Leer un libro por mes durante el año', dueDate: '31/12/2024' },
-    ]
+    items: [],
+    status: 'idle',
   },
-  reducers: {
-    addGoal: (state, action) => {
-      state.items.push(action.payload);
-    },
-    removeGoal: (state, action) => {
-      state.items = state.items.filter(goal => goal.id !== action.payload);
-    },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchGoals.fulfilled, (state, action) => {
+        state.items = action.payload;
+      })
+      .addCase(addGoal.fulfilled, (state, action) => {
+        state.items.push(action.payload);
+      })
+      .addCase(removeGoal.fulfilled, (state, action) => {
+        state.items = state.items.filter(g => g._id !== action.payload);
+      });
   },
 });
 
-export const { addGoal, removeGoal } = goalsSlice.actions;
 export default goalsSlice.reducer;
